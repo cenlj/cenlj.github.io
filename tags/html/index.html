@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="CG技术分享网站">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="欢迎来到我的网站，博客内容主要涉及CG技术分享、生活随笔、学习笔记等。">
 <title>Tag: Html - 小高山的个人博客</title>
 
 <link rel='canonical' href='https://cenlj.github.io/tags/html/'>
 
 <link rel="stylesheet" href="/scss/style.min.946cca6c6259ef94ac55abfae7c7bf3291ea3ed5eea17ef77500b257217c6710.css"><meta property='og:title' content="Tag: Html - 小高山的个人博客">
-<meta property='og:description' content="CG技术分享网站">
+<meta property='og:description' content="欢迎来到我的网站，博客内容主要涉及CG技术分享、生活随笔、学习笔记等。">
 <meta property='og:url' content='https://cenlj.github.io/tags/html/'>
 <meta property='og:site_name' content='小高山的个人博客'>
-<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2025-07-01T12:07:30&#43;08:00 '/>
+<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2025-07-01T20:16:58&#43;08:00 '/>
 <meta name="twitter:title" content="Tag: Html - 小高山的个人博客">
-<meta name="twitter:description" content="CG技术分享网站"><link rel="alternate" type="application/rss&#43;xml" href="https://cenlj.github.io/tags/html/index.xml">
+<meta name="twitter:description" content="欢迎来到我的网站，博客内容主要涉及CG技术分享、生活随笔、学习笔记等。"><link rel="alternate" type="application/rss&#43;xml" href="https://cenlj.github.io/tags/html/index.xml">
     <link rel="shortcut icon" href="/favicon.ico" />
 
     </head>
@@ -62,15 +62,13 @@
                 
                 </a>
                 
-                    <span class="emoji">🍉</span>
-                
             </figure>
             
         
         
         <div class="site-meta">
             <h1 class="site-name"><a href="/">小高山的个人博客</a></h1>
-            <h2 class="site-description">CG技术分享网站</h2>
+            <h2 class="site-description">欢迎来到我的网站，博客内容主要涉及CG技术分享、生活随笔、学习笔记等。</h2>
         </div>
     </header><ol class="menu-social">
             
@@ -282,7 +280,7 @@
                     <a href="/archives/#2025">
                         
                             <span class="year">2025</span>
-                            <span class="count">2</span>
+                            <span class="count">3</span>
                         
                     </a> 
                 </div>
@@ -445,7 +443,7 @@
     <section class="copyright">
         &copy; 
         
-        2025 小高山的个人博客 版权所有
+        2025 小高山的个人博客 All rights reserved. 禁止转载，如需引用，请注明文章链接。
 
         
         
@@ -482,6 +480,135 @@
         document.head.appendChild(customFont);
     }());
 </script>
+<script defer src="https://cn.vercount.one/js"></script>
+<script>
+    function showHideView() {
+        
+        let viewCounts = document.querySelectorAll("#viewCount");
+        if (viewCounts) {
+            
+            let article =  document.querySelector(".article-page");
+            if (!article) {
+                viewCounts.forEach(ele => {
+                    ele.style.display = 'none';
+                });
+            }
+        }
+    }
+    
+    showHideView();
+</script>
+
+
+<a href="#" id="back-to-top" title="返回顶部"></a>
+
+
+<style>
+  #back-to-top {
+    display: none;
+    position: fixed;
+    bottom: 5px;
+    right: 15px;
+    width: 40px;  
+    height: 40px;  
+    border-radius: 50%;  
+    background-color: var(--body-background);
+    box-shadow: var(--shadow-l2);
+    font-size: 20px;  
+    text-align: center;
+    line-height: 38px;  
+    cursor: pointer;
+    transition:
+      transform 0.3s ease,
+      background-color 0.3s ease;  
+  }
+
+  #back-to-top:before {
+    content: "";
+    display: inline-block;
+    position: relative;
+    transform: rotate(135deg);
+    height: 8px;  
+    width: 8px;  
+    border-width: 0 0 2px 2px;
+    border-color: var(--back-to-top-color);
+    border-style: solid;
+  }
+
+  #back-to-top:hover {
+    transform: scale(1.1);  
+    background-color: var(--accent-background);  
+  }
+
+  #back-to-top:hover:before {
+    border-color: var(--accent-color);  
+  }
+
+   
+  @media screen and (max-width: 768px) {
+    #back-to-top {
+      bottom: 5px;
+      right: var(--container-padding);
+      width: 30px;  
+      height: 30px;
+      font-size: 16px;
+      line-height: 32px;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    #back-to-top {
+      bottom: 10px;
+      right: 20px;
+    }
+  }
+
+  @media screen and (min-width: 1280px) {
+    #back-to-top {
+      bottom: 15px;
+      right: 25px;
+    }
+  }
+
+  @media screen and (min-width: 1536px) {
+    #back-to-top {
+      bottom: 15px;
+      right: 25px;
+       
+    }
+  }
+</style>
+
+<script>
+    function backToTop() {
+      document.documentElement.scrollIntoView({
+        behavior: 'smooth',
+      })
+    }
+  
+    window.onload = function () {
+      let scrollTop =
+        this.document.documentElement.scrollTop || this.document.body.scrollTop
+      let totopBtn = this.document.getElementById('back-to-top')
+      if (scrollTop > 0) {
+        totopBtn.style.display = 'inline'
+      } else {
+        totopBtn.style.display = 'none'
+      }
+    }
+  
+    window.onscroll = function () {
+      let scrollTop =
+        this.document.documentElement.scrollTop || this.document.body.scrollTop
+      let totopBtn = this.document.getElementById('back-to-top')
+      if (scrollTop < 200) {
+        totopBtn.style.display = 'none'
+      } else {
+        totopBtn.style.display = 'inline'
+        totopBtn.addEventListener('click', backToTop, false)
+      }
+    }
+  </script>
 
     </body>
 </html>
