@@ -638,14 +638,18 @@
     
 
     <footer class="site-footer">
+
     <section class="copyright">
+        <div class="footer-info">
+            本博客已稳定运行：<span id="runningdays"></span>
+        </div>
         &copy; 
         
         2025 小高山的个人博客 All rights reserved. 禁止转载，如需引用，请注明文章链接。
 
         
         
-        <div style="margin-top:8px;font-size:0.9em;">
+        <div style="margin-top:10px;font-size:0.9em;">
             <a href="https://beian.miit.gov.cn/" target="_blank">粤ICP备2025366829号</a>
         </div>
         
@@ -655,6 +659,8 @@
         使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
         主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
     </section>
+
+    
 
 
 </footer>
@@ -885,6 +891,61 @@
       }
     }
   </script>
+
+  
+<span id="runningdays"></span>
+<script>
+  function updateRunningDays() {
+    let s1 = '2025-6-30'; 
+    s1 = new Date(s1.replace(/-/g, "/"));
+    let s2 = new Date();
+
+    
+    let diffInMilliseconds = s2.getTime() - s1.getTime();
+
+    
+    let years = s2.getFullYear() - s1.getFullYear();
+    let months = s2.getMonth() - s1.getMonth();
+    let days = s2.getDate() - s1.getDate();
+    let hours = s2.getHours() - s1.getHours();
+    let minutes = s2.getMinutes() - s1.getMinutes();
+    let seconds = s2.getSeconds() - s1.getSeconds();
+
+    
+    if (seconds < 0) {
+      minutes -= 1;
+      seconds += 60;
+    }
+    if (minutes < 0) {
+      hours -= 1;
+      minutes += 60;
+    }
+    if (hours < 0) {
+      days -= 1;
+      hours += 24;
+    }
+    if (days < 0) {
+      months -= 1;
+      
+      let prevMonth = new Date(s2.getFullYear(), s2.getMonth(), 0);
+      days += prevMonth.getDate();
+    }
+    if (months < 0) {
+      years -= 1;
+      months += 12;
+    }
+
+    
+    let result = `${years}年${months}月${days}天${hours}时${minutes}分${seconds}秒`;
+    document.getElementById('runningdays').innerHTML = result;
+  }
+
+  
+  updateRunningDays();
+  
+  setInterval(updateRunningDays, 1000);
+</script>
+ 
 
     </body>
 </html>
