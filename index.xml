@@ -29,7 +29,11 @@
         
         <guid>https://cenlj.github.io/p/myfristblog/</guid>
         <description>&lt;h3 id=&#34;hello-world&#34;&gt;Hello World
-&lt;/h3&gt;</description>
+&lt;/h3&gt;&lt;details&gt;
+    &lt;summary&gt;Learn More&lt;/summary&gt;
+    &lt;div&gt;Collapsed text&lt;/div&gt;
+&lt;/details&gt;
+</description>
         </item>
         <item>
         <title>Chinese Test</title>
