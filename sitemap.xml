@@ -3,90 +3,36 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://cenlj.github.io/categories/</loc>
-    <lastmod>2025-07-14T10:45:16+08:00</lastmod>
+    <lastmod>2025-12-15T01:18:23+08:00</lastmod>
   </url><url>
-    <loc>https://cenlj.github.io/tags/git/</loc>
-    <lastmod>2025-07-14T10:45:16+08:00</lastmod>
+    <loc>https://cenlj.github.io/p/hello-hugo/</loc>
+    <lastmod>2025-12-15T01:18:23+08:00</lastmod>
   </url><url>
-    <loc>https://cenlj.github.io/p/git-%E7%9A%84%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E5%9C%BA%E6%99%AF%E5%91%BD%E4%BB%A4/</loc>
-    <lastmod>2025-07-14T10:45:16+08:00</lastmod>
+    <loc>https://cenlj.github.io/tags/hugo/</loc>
+    <lastmod>2025-12-15T01:18:23+08:00</lastmod>
   </url><url>
     <loc>https://cenlj.github.io/post/</loc>
-    <lastmod>2025-07-14T10:45:16+08:00</lastmod>
+    <lastmod>2025-12-15T01:18:23+08:00</lastmod>
   </url><url>
     <loc>https://cenlj.github.io/tags/</loc>
-    <lastmod>2025-07-14T10:45:16+08:00</lastmod>
+    <lastmod>2025-12-15T01:18:23+08:00</lastmod>
   </url><url>
-    <loc>https://cenlj.github.io/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/</loc>
-    <lastmod>2025-07-14T10:45:16+08:00</lastmod>
+    <loc>https://cenlj.github.io/tags/%E5%8D%9A%E5%AE%A2/</loc>
+    <lastmod>2025-12-15T01:18:23+08:00</lastmod>
   </url><url>
     <loc>https://cenlj.github.io/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2025-07-14T10:45:16+08:00</lastmod>
+    <lastmod>2025-12-15T01:18:23+08:00</lastmod>
   </url><url>
-    <loc>https://cenlj.github.io/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/</loc>
-    <lastmod>2025-07-14T10:45:16+08:00</lastmod>
+    <loc>https://cenlj.github.io/tags/%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99/</loc>
+    <lastmod>2025-12-15T01:18:23+08:00</lastmod>
   </url><url>
     <loc>https://cenlj.github.io/showcase/</loc>
     <lastmod>2025-07-06T22:46:03+08:00</lastmod>
-  </url><url>
-    <loc>https://cenlj.github.io/p/metahuman-for-maya/</loc>
-    <lastmod>2025-07-01T12:11:17+08:00</lastmod>
-  </url><url>
-    <loc>https://cenlj.github.io/p/myfristblog/</loc>
-    <lastmod>2025-07-02T15:39:55+08:00</lastmod>
-  </url><url>
-    <loc>https://cenlj.github.io/p/test-chinese/</loc>
-    <lastmod>2025-07-01T11:31:48+08:00</lastmod>
-  </url><url>
-    <loc>https://cenlj.github.io/categories/%E6%B5%8B%E8%AF%95/</loc>
-    <lastmod>2025-07-01T11:31:48+08:00</lastmod>
   </url><url>
     <loc>https://cenlj.github.io/page/</loc>
     <lastmod>2025-07-08T19:55:21+08:00</lastmod>
   </url><url>
     <loc>https://cenlj.github.io/archives/</loc>
-    <lastmod>2025-07-01T11:31:48+08:00</lastmod>
-  </url><url>
-    <loc>https://cenlj.github.io/tags/css/</loc>
-    <lastmod>2025-07-01T11:31:48+08:00</lastmod>
-  </url><url>
-    <loc>https://cenlj.github.io/tags/html/</loc>
-    <lastmod>2025-07-01T11:31:48+08:00</lastmod>
-  </url><url>
-    <loc>https://cenlj.github.io/tags/markdown/</loc>
-    <lastmod>2025-07-01T11:31:48+08:00</lastmod>
-  </url><url>
-    <loc>https://cenlj.github.io/p/markdown-syntax-guide/</loc>
-    <lastmod>2025-07-01T11:31:48+08:00</lastmod>
-  </url><url>
-    <loc>https://cenlj.github.io/categories/syntax/</loc>
-    <lastmod>2025-07-01T11:31:48+08:00</lastmod>
-  </url><url>
-    <loc>https://cenlj.github.io/categories/themes/</loc>
-    <lastmod>2025-07-01T11:31:48+08:00</lastmod>
-  </url><url>
-    <loc>https://cenlj.github.io/tags/themes/</loc>
-    <lastmod>2025-07-01T11:31:48+08:00</lastmod>
-  </url><url>
-    <loc>https://cenlj.github.io/p/placeholder-text/</loc>
-    <lastmod>2025-07-01T11:31:48+08:00</lastmod>
-  </url><url>
-    <loc>https://cenlj.github.io/tags/tag-with-whitespaces/</loc>
-    <lastmod>2025-07-01T11:31:48+08:00</lastmod>
-  </url><url>
-    <loc>https://cenlj.github.io/categories/test-with-whitespaces/</loc>
-    <lastmod>2025-07-01T11:31:48+08:00</lastmod>
-  </url><url>
-    <loc>https://cenlj.github.io/tags/text/</loc>
-    <lastmod>2025-07-01T11:31:48+08:00</lastmod>
-  </url><url>
-    <loc>https://cenlj.github.io/p/math-typesetting/</loc>
-    <lastmod>2025-07-01T11:31:48+08:00</lastmod>
-  </url><url>
-    <loc>https://cenlj.github.io/tags/emoji/</loc>
-    <lastmod>2025-07-01T11:31:48+08:00</lastmod>
-  </url><url>
-    <loc>https://cenlj.github.io/p/emoji-support/</loc>
     <lastmod>2025-07-01T11:31:48+08:00</lastmod>
   </url><url>
     <loc>https://cenlj.github.io/</loc>
