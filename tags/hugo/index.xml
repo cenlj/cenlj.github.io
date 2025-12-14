@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Hugo on 像素西瓜籽的个人博客</title>
-        <link>https://cenlj.github.io/tags/hugo/</link>
+        <link>https://pixelseed.github.io/tags/hugo/</link>
         <description>Recent content in Hugo on 像素西瓜籽的个人博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>像素西瓜籽的个人博客 All rights reserved. 禁止转载，如需引用，请注明文章链接。</copyright>
-        <lastBuildDate>Mon, 15 Dec 2025 01:18:23 +0800</lastBuildDate><atom:link href="https://cenlj.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 15 Dec 2025 01:18:23 +0800</lastBuildDate><atom:link href="https://pixelseed.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Hello Hugo</title>
-        <link>https://cenlj.github.io/p/hello-hugo/</link>
+        <link>https://pixelseed.github.io/p/hello-hugo/</link>
         <pubDate>Mon, 15 Dec 2025 01:00:00 +0800</pubDate>
         
-        <guid>https://cenlj.github.io/p/hello-hugo/</guid>
+        <guid>https://pixelseed.github.io/p/hello-hugo/</guid>
         <description>&lt;h2 id=&#34;-欢迎来到我的博客&#34;&gt;🎉 欢迎来到我的博客
 &lt;/h2&gt;&lt;p&gt;你好！欢迎来到我使用 Hugo 搭建的个人博客。这是我的第一篇文章，标志着我的博客之旅正式开始。&lt;/p&gt;
 &lt;h2 id=&#34;为什么选择-hugo&#34;&gt;为什么选择 Hugo？

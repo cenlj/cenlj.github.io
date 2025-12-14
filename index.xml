@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>像素西瓜籽的个人博客</title>
-        <link>https://cenlj.github.io/</link>
+        <link>https://pixelseed.github.io/</link>
         <description>Recent content on 像素西瓜籽的个人博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>像素西瓜籽的个人博客 All rights reserved. 禁止转载，如需引用，请注明文章链接。</copyright><atom:link href="https://cenlj.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <copyright>像素西瓜籽的个人博客 All rights reserved. 禁止转载，如需引用，请注明文章链接。</copyright><atom:link href="https://pixelseed.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Hello Hugo</title>
-        <link>https://cenlj.github.io/p/hello-hugo/</link>
+        <link>https://pixelseed.github.io/p/hello-hugo/</link>
         <pubDate>Mon, 15 Dec 2025 01:00:00 +0800</pubDate>
         
-        <guid>https://cenlj.github.io/p/hello-hugo/</guid>
+        <guid>https://pixelseed.github.io/p/hello-hugo/</guid>
         <description>&lt;h2 id=&#34;-欢迎来到我的博客&#34;&gt;🎉 欢迎来到我的博客
 &lt;/h2&gt;&lt;p&gt;你好！欢迎来到我使用 Hugo 搭建的个人博客。这是我的第一篇文章，标志着我的博客之旅正式开始。&lt;/p&gt;
 &lt;h2 id=&#34;为什么选择-hugo&#34;&gt;为什么选择 Hugo？
@@ -63,10 +63,10 @@
         </item>
         <item>
         <title>资源</title>
-        <link>https://cenlj.github.io/showcase/</link>
+        <link>https://pixelseed.github.io/showcase/</link>
         <pubDate>Wed, 02 Jul 2025 18:29:36 +0800</pubDate>
         
-        <guid>https://cenlj.github.io/showcase/</guid>
+        <guid>https://pixelseed.github.io/showcase/</guid>
         <description>&lt;div style=&#34;text-align: center;&#34;&gt;
 &lt;blockquote&gt;
 &lt;p&gt;下面所有装备均由其尊敬的艺术家创作，请​先点击标题链接进入其下载页面和阅读用户协议。&lt;/p&gt;
@@ -78,7 +78,7 @@
   &lt;div class=&#34;showcase-box column-2&#34;&gt;
       &lt;div class=&#34;showcase-image&#34;&gt;
           &lt;a href=&#34;https://temaroots.gumroad.com/l/Tom?layout=profile&#34;&gt;
-              &lt;img src=&#34;https://cenlj.github.io/images/toms.webp&#34; alt=&#34;汤姆猫（Maya绑定）&#34; loading=&#34;lazy&#34;&gt;
+              &lt;img src=&#34;https://pixelseed.github.io/images/toms.webp&#34; alt=&#34;汤姆猫（Maya绑定）&#34; loading=&#34;lazy&#34;&gt;
           &lt;/a&gt;
       &lt;/div&gt;
       &lt;div class=&#34;showcase-title&#34;&gt;
@@ -93,7 +93,7 @@
   &lt;div class=&#34;showcase-box column-2&#34;&gt;
       &lt;div class=&#34;showcase-image&#34;&gt;
           &lt;a href=&#34;https://temaroots.gumroad.com/l/jerry?layout=profile&#34;&gt;
-              &lt;img src=&#34;https://cenlj.github.io/images/jerry_cover.webp&#34; alt=&#34;杰瑞鼠（Maya绑定）&#34; loading=&#34;lazy&#34;&gt;
+              &lt;img src=&#34;https://pixelseed.github.io/images/jerry_cover.webp&#34; alt=&#34;杰瑞鼠（Maya绑定）&#34; loading=&#34;lazy&#34;&gt;
           &lt;/a&gt;
       &lt;/div&gt;
       &lt;div class=&#34;showcase-title&#34;&gt;
@@ -108,7 +108,7 @@
   &lt;div class=&#34;showcase-box column-2&#34;&gt;
       &lt;div class=&#34;showcase-image&#34;&gt;
           &lt;a href=&#34;https://lucathyel.gumroad.com/l/HWoMy?recommended_by=search&#34;&gt;
-              &lt;img src=&#34;https://cenlj.github.io/images/weien.webp&#34; alt=&#34;薇恩（Maya绑定）&#34; loading=&#34;lazy&#34;&gt;
+              &lt;img src=&#34;https://pixelseed.github.io/images/weien.webp&#34; alt=&#34;薇恩（Maya绑定）&#34; loading=&#34;lazy&#34;&gt;
           &lt;/a&gt;
       &lt;/div&gt;
       &lt;div class=&#34;showcase-title&#34;&gt;
@@ -123,7 +123,7 @@
   &lt;div class=&#34;showcase-box column-2&#34;&gt;
       &lt;div class=&#34;showcase-image&#34;&gt;
           &lt;a href=&#34;https://thestoff.gumroad.com/l/gtneS?layout=profile&#34;&gt;
-              &lt;img src=&#34;https://cenlj.github.io/images/renzhe.webp&#34; alt=&#34;忍者（Maya绑定）&#34; loading=&#34;lazy&#34;&gt;
+              &lt;img src=&#34;https://pixelseed.github.io/images/renzhe.webp&#34; alt=&#34;忍者（Maya绑定）&#34; loading=&#34;lazy&#34;&gt;
           &lt;/a&gt;
       &lt;/div&gt;
       &lt;div class=&#34;showcase-title&#34;&gt;
@@ -141,7 +141,7 @@
   &lt;div class=&#34;showcase-box column-2&#34;&gt;
       &lt;div class=&#34;showcase-image&#34;&gt;
           &lt;a href=&#34;https://callesantiago.gumroad.com/l/bulbasaur?layout=profile&#34;&gt;
-              &lt;img src=&#34;https://cenlj.github.io/images/miaowa.webp&#34; alt=&#34;妙蛙种子（Maya绑定）&#34; loading=&#34;lazy&#34;&gt;
+              &lt;img src=&#34;https://pixelseed.github.io/images/miaowa.webp&#34; alt=&#34;妙蛙种子（Maya绑定）&#34; loading=&#34;lazy&#34;&gt;
           &lt;/a&gt;
       &lt;/div&gt;
       &lt;div class=&#34;showcase-title&#34;&gt;
@@ -157,18 +157,18 @@
         </item>
         <item>
         <title>归档</title>
-        <link>https://cenlj.github.io/archives/</link>
+        <link>https://pixelseed.github.io/archives/</link>
         <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
         
-        <guid>https://cenlj.github.io/archives/</guid>
+        <guid>https://pixelseed.github.io/archives/</guid>
         <description></description>
         </item>
         <item>
         <title>分享</title>
-        <link>https://cenlj.github.io/links/</link>
+        <link>https://pixelseed.github.io/links/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://cenlj.github.io/links/</guid>
+        <guid>https://pixelseed.github.io/links/</guid>
         <description>&lt;div style=&#34;text-align: center;&#34;&gt;
 &lt;blockquote&gt;
 &lt;p&gt;以下网站极度实用且强大，可能引发学习上瘾症状… 症状包括：知识暴涨、效率飙升、忍不住想收藏！速点！&lt;/p&gt;
@@ -178,19 +178,19 @@
         </item>
         <item>
         <title>关于</title>
-        <link>https://cenlj.github.io/about/</link>
+        <link>https://pixelseed.github.io/about/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://cenlj.github.io/about/</guid>
+        <guid>https://pixelseed.github.io/about/</guid>
         <description>&lt;p&gt;This is a test page for i18n support.&lt;/p&gt;
 </description>
         </item>
         <item>
         <title>搜索</title>
-        <link>https://cenlj.github.io/search/</link>
+        <link>https://pixelseed.github.io/search/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://cenlj.github.io/search/</guid>
+        <guid>https://pixelseed.github.io/search/</guid>
         <description></description>
         </item>
         

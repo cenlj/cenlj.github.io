@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Pages on 像素西瓜籽的个人博客</title>
-        <link>https://cenlj.github.io/page/</link>
+        <link>https://pixelseed.github.io/page/</link>
         <description>Recent content in Pages on 像素西瓜籽的个人博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>像素西瓜籽的个人博客 All rights reserved. 禁止转载，如需引用，请注明文章链接。</copyright>
-        <lastBuildDate>Tue, 08 Jul 2025 19:55:21 +0800</lastBuildDate><atom:link href="https://cenlj.github.io/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 08 Jul 2025 19:55:21 +0800</lastBuildDate><atom:link href="https://pixelseed.github.io/page/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>归档</title>
-        <link>https://cenlj.github.io/archives/</link>
+        <link>https://pixelseed.github.io/archives/</link>
         <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
         
-        <guid>https://cenlj.github.io/archives/</guid>
+        <guid>https://pixelseed.github.io/archives/</guid>
         <description></description>
         </item>
         <item>
         <title>分享</title>
-        <link>https://cenlj.github.io/links/</link>
+        <link>https://pixelseed.github.io/links/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://cenlj.github.io/links/</guid>
+        <guid>https://pixelseed.github.io/links/</guid>
         <description>&lt;div style=&#34;text-align: center;&#34;&gt;
 &lt;blockquote&gt;
 &lt;p&gt;以下网站极度实用且强大，可能引发学习上瘾症状… 症状包括：知识暴涨、效率飙升、忍不住想收藏！速点！&lt;/p&gt;
@@ -30,19 +30,19 @@
         </item>
         <item>
         <title>关于</title>
-        <link>https://cenlj.github.io/about/</link>
+        <link>https://pixelseed.github.io/about/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://cenlj.github.io/about/</guid>
+        <guid>https://pixelseed.github.io/about/</guid>
         <description>&lt;p&gt;This is a test page for i18n support.&lt;/p&gt;
 </description>
         </item>
         <item>
         <title>搜索</title>
-        <link>https://cenlj.github.io/search/</link>
+        <link>https://pixelseed.github.io/search/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://cenlj.github.io/search/</guid>
+        <guid>https://pixelseed.github.io/search/</guid>
         <description></description>
         </item>
         
