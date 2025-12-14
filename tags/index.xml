@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Tags on 山今的个人博客</title>
+        <title>Tags on 像素西瓜籽的个人博客</title>
         <link>https://cenlj.github.io/tags/</link>
-        <description>Recent content in Tags on 山今的个人博客</description>
+        <description>Recent content in Tags on 像素西瓜籽的个人博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>山今的个人博客 All rights reserved. 禁止转载，如需引用，请注明文章链接。</copyright>
+        <copyright>像素西瓜籽的个人博客 All rights reserved. 禁止转载，如需引用，请注明文章链接。</copyright>
         <lastBuildDate>Mon, 14 Jul 2025 10:45:16 +0800</lastBuildDate><atom:link href="https://cenlj.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Git</title>
         <link>https://cenlj.github.io/tags/git/</link>
