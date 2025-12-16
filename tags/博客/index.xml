@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>像素西瓜籽的个人博客 All rights reserved. 禁止转载，如需引用，请注明文章链接。</copyright>
-        <lastBuildDate>Mon, 15 Dec 2025 01:18:23 +0800</lastBuildDate><atom:link href="https://pixelseed.github.io/tags/%E5%8D%9A%E5%AE%A2/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 17 Dec 2025 01:06:33 +0800</lastBuildDate><atom:link href="https://pixelseed.github.io/tags/%E5%8D%9A%E5%AE%A2/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Hello Hugo</title>
         <link>https://pixelseed.github.io/p/hello-hugo/</link>
         <pubDate>Mon, 15 Dec 2025 01:00:00 +0800</pubDate>
@@ -53,7 +53,6 @@
 &lt;li&gt;&lt;strong&gt;自定义域名&lt;/strong&gt;：www.artofrig.com&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;自动部署&lt;/strong&gt;：GitHub Actions&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;每当我推送新的文章到 GitHub，博客会自动构建并部署，非常方便！&lt;/p&gt;
 &lt;h2 id=&#34;写在最后&#34;&gt;写在最后
 &lt;/h2&gt;&lt;p&gt;感谢你访问我的博客！这里将记录我的成长轨迹，分享我的所学所思。&lt;/p&gt;
 &lt;p&gt;如果你对某个话题感兴趣，或者有任何建议，欢迎通过页面底部的评论功能与我交流。&lt;/p&gt;

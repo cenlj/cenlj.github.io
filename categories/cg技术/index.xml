@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Posts on 像素西瓜籽的个人博客</title>
-        <link>https://pixelseed.github.io/post/</link>
-        <description>Recent content in Posts on 像素西瓜籽的个人博客</description>
+        <title>CG技术 on 像素西瓜籽的个人博客</title>
+        <link>https://pixelseed.github.io/categories/cg%E6%8A%80%E6%9C%AF/</link>
+        <description>Recent content in CG技术 on 像素西瓜籽的个人博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>像素西瓜籽的个人博客 All rights reserved. 禁止转载，如需引用，请注明文章链接。</copyright>
-        <lastBuildDate>Wed, 17 Dec 2025 01:06:33 +0800</lastBuildDate><atom:link href="https://pixelseed.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 17 Dec 2025 01:06:33 +0800</lastBuildDate><atom:link href="https://pixelseed.github.io/categories/cg%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Maya Logic Compiler - 节点逻辑编译器</title>
         <link>https://pixelseed.github.io/p/maya-logic-compiler/</link>
         <pubDate>Wed, 17 Dec 2025 00:25:00 +0800</pubDate>
@@ -289,60 +289,6 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description>
-        </item>
-        <item>
-        <title>Hello Hugo</title>
-        <link>https://pixelseed.github.io/p/hello-hugo/</link>
-        <pubDate>Mon, 15 Dec 2025 01:00:00 +0800</pubDate>
-        
-        <guid>https://pixelseed.github.io/p/hello-hugo/</guid>
-        <description>&lt;h2 id=&#34;-欢迎来到我的博客&#34;&gt;🎉 欢迎来到我的博客
-&lt;/h2&gt;&lt;p&gt;你好！欢迎来到我使用 Hugo 搭建的个人博客。这是我的第一篇文章，标志着我的博客之旅正式开始。&lt;/p&gt;
-&lt;h2 id=&#34;为什么选择-hugo&#34;&gt;为什么选择 Hugo？
-&lt;/h2&gt;&lt;p&gt;Hugo 是一个用 Go 语言编写的静态网站生成器，它有以下优点：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;⚡ &lt;strong&gt;速度极快&lt;/strong&gt;：构建速度非常快，即使是大型网站也能在几秒内完成构建&lt;/li&gt;
-&lt;li&gt;🎨 &lt;strong&gt;主题丰富&lt;/strong&gt;：拥有大量精美的主题可供选择&lt;/li&gt;
-&lt;li&gt;📝 &lt;strong&gt;Markdown 支持&lt;/strong&gt;：使用 Markdown 编写文章，简单高效&lt;/li&gt;
-&lt;li&gt;🚀 &lt;strong&gt;易于部署&lt;/strong&gt;：可以轻松部署到 GitHub Pages、Netlify 等平台&lt;/li&gt;
-&lt;li&gt;🔧 &lt;strong&gt;配置灵活&lt;/strong&gt;：强大的配置系统，支持多语言、分类、标签等功能&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;我的博客计划&#34;&gt;我的博客计划
-&lt;/h2&gt;&lt;p&gt;在这个博客中，我计划分享：&lt;/p&gt;
-&lt;h3 id=&#34;技术相关&#34;&gt;技术相关
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;CG 技术探索与实践&lt;/li&gt;
-&lt;li&gt;编程学习笔记&lt;/li&gt;
-&lt;li&gt;工具使用技巧&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;生活随笔&#34;&gt;生活随笔
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;日常思考&lt;/li&gt;
-&lt;li&gt;学习心得&lt;/li&gt;
-&lt;li&gt;个人成长&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;资源分享&#34;&gt;资源分享
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;优质教程推荐&lt;/li&gt;
-&lt;li&gt;实用工具介绍&lt;/li&gt;
-&lt;li&gt;学习资源整理&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;关于博客搭建&#34;&gt;关于博客搭建
-&lt;/h2&gt;&lt;p&gt;这个博客使用了以下技术栈：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;静态网站生成器&lt;/strong&gt;：Hugo v0.147.9&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;主题&lt;/strong&gt;：hugo-theme-stack&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;托管平台&lt;/strong&gt;：GitHub Pages&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;自定义域名&lt;/strong&gt;：www.artofrig.com&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;自动部署&lt;/strong&gt;：GitHub Actions&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;写在最后&#34;&gt;写在最后
-&lt;/h2&gt;&lt;p&gt;感谢你访问我的博客！这里将记录我的成长轨迹，分享我的所学所思。&lt;/p&gt;
-&lt;p&gt;如果你对某个话题感兴趣，或者有任何建议，欢迎通过页面底部的评论功能与我交流。&lt;/p&gt;
-&lt;p&gt;让我们一起在学习的道路上不断前进！💪&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;em&gt;本文发布于 2025 年 12 月 15 日&lt;/em&gt;&lt;/p&gt;
-</description>
         </item>
         
     </channel>

@@ -7,7 +7,31 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>像素西瓜籽的个人博客 All rights reserved. 禁止转载，如需引用，请注明文章链接。</copyright>
-        <lastBuildDate>Mon, 15 Dec 2025 01:18:23 +0800</lastBuildDate><atom:link href="https://pixelseed.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 17 Dec 2025 01:06:33 +0800</lastBuildDate><atom:link href="https://pixelseed.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Maya</title>
+        <link>https://pixelseed.github.io/tags/maya/</link>
+        <pubDate>Wed, 17 Dec 2025 00:25:00 +0800</pubDate>
+        
+        <guid>https://pixelseed.github.io/tags/maya/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Python</title>
+        <link>https://pixelseed.github.io/tags/python/</link>
+        <pubDate>Wed, 17 Dec 2025 00:25:00 +0800</pubDate>
+        
+        <guid>https://pixelseed.github.io/tags/python/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>工具开发</title>
+        <link>https://pixelseed.github.io/tags/%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91/</link>
+        <pubDate>Wed, 17 Dec 2025 00:25:00 +0800</pubDate>
+        
+        <guid>https://pixelseed.github.io/tags/%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Hugo</title>
         <link>https://pixelseed.github.io/tags/hugo/</link>
         <pubDate>Mon, 15 Dec 2025 01:00:00 +0800</pubDate>

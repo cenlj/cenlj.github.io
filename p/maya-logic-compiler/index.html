@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="欢迎来到我的博客！这是我使用 Hugo 搭建的第一篇文章。">
-<title>Hello Hugo</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="将 Maya 节点网络反向编译为可复用 Python 代码的实用工具">
+<title>Maya Logic Compiler - 节点逻辑编译器</title>
 
-<link rel='canonical' href='https://pixelseed.github.io/p/hello-hugo/'>
+<link rel='canonical' href='https://pixelseed.github.io/p/maya-logic-compiler/'>
 
-<link rel="stylesheet" href="/scss/style.min.f1c622ba4c9fadef8bbe7195089c793b226263d7eb5ab3f66f4b96d751987f8d.css"><meta property='og:title' content="Hello Hugo">
-<meta property='og:description' content="欢迎来到我的博客！这是我使用 Hugo 搭建的第一篇文章。">
-<meta property='og:url' content='https://pixelseed.github.io/p/hello-hugo/'>
+<link rel="stylesheet" href="/scss/style.min.f1c622ba4c9fadef8bbe7195089c793b226263d7eb5ab3f66f4b96d751987f8d.css"><meta property='og:title' content="Maya Logic Compiler - 节点逻辑编译器">
+<meta property='og:description' content="将 Maya 节点网络反向编译为可复用 Python 代码的实用工具">
+<meta property='og:url' content='https://pixelseed.github.io/p/maya-logic-compiler/'>
 <meta property='og:site_name' content='像素西瓜籽的个人博客'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Hugo' /><meta property='article:tag' content='博客' /><meta property='article:tag' content='静态网站' /><meta property='article:published_time' content='2025-12-15T01:00:00&#43;08:00'/><meta property='article:modified_time' content='2025-12-17T01:06:33&#43;08:00'/>
-<meta name="twitter:title" content="Hello Hugo">
-<meta name="twitter:description" content="欢迎来到我的博客！这是我使用 Hugo 搭建的第一篇文章。">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Maya' /><meta property='article:tag' content='Python' /><meta property='article:tag' content='工具开发' /><meta property='article:published_time' content='2025-12-17T00:25:00&#43;08:00'/><meta property='article:modified_time' content='2025-12-17T01:06:33&#43;08:00'/>
+<meta name="twitter:title" content="Maya Logic Compiler - 节点逻辑编译器">
+<meta name="twitter:description" content="将 Maya 节点网络反向编译为可复用 Python 代码的实用工具">
     <link rel="shortcut icon" href="/favicon.ico" />
 
     </head>
@@ -271,17 +271,31 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ul>
-    <li><a href="#-欢迎来到我的博客">🎉 欢迎来到我的博客</a></li>
-    <li><a href="#为什么选择-hugo">为什么选择 Hugo？</a></li>
-    <li><a href="#我的博客计划">我的博客计划</a>
+    <li><a href="#工具简介">工具简介</a></li>
+    <li><a href="#快速上手">快速上手</a>
       <ul>
-        <li><a href="#技术相关">技术相关</a></li>
-        <li><a href="#生活随笔">生活随笔</a></li>
-        <li><a href="#资源分享">资源分享</a></li>
+        <li><a href="#版本信息">版本信息</a></li>
+        <li><a href="#安装使用">安装使用</a></li>
+        <li><a href="#基本操作流程">基本操作流程</a></li>
       </ul>
     </li>
-    <li><a href="#关于博客搭建">关于博客搭建</a></li>
-    <li><a href="#写在最后">写在最后</a></li>
+    <li><a href="#使用示例">使用示例</a>
+      <ul>
+        <li><a href="#示例场景">示例场景</a></li>
+        <li><a href="#操作步骤">操作步骤</a></li>
+        <li><a href="#生成的代码">生成的代码</a></li>
+        <li><a href="#使用生成的代码">使用生成的代码</a></li>
+      </ul>
+    </li>
+    <li><a href="#工具功能">工具功能</a>
+      <ul>
+        <li><a href="#支持的数据类型">支持的数据类型</a></li>
+        <li><a href="#多对多连接支持">多对多连接支持</a></li>
+        <li><a href="#智能属性过滤">智能属性过滤</a></li>
+        <li><a href="#节点网络验证">节点网络验证</a></li>
+        <li><a href="#名称智能清洗">名称智能清洗</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
         </div>
@@ -300,8 +314,12 @@
     
     <header class="article-category">
         
-            <a href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/" >
-                技术笔记
+            <a href="/categories/cg%E6%8A%80%E6%9C%AF/" >
+                CG技术
+            </a>
+        
+            <a href="/categories/maya%E5%BC%80%E5%8F%91/" >
+                Maya开发
             </a>
         
     </header>
@@ -309,12 +327,12 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/hello-hugo/">Hello Hugo</a>
+            <a href="/p/maya-logic-compiler/">Maya Logic Compiler - 节点逻辑编译器</a>
         </h2>
     
         
         <h3 class="article-subtitle">
-            欢迎来到我的博客！这是我使用 Hugo 搭建的第一篇文章。
+            将 Maya 节点网络反向编译为可复用 Python 代码的实用工具
         </h3>
         
     </div>
@@ -335,7 +353,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Dec 15, 2025</time>
+                <time class="article-time--published">Dec 17, 2025</time>
             </div>
         
 
@@ -358,7 +376,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 1 分钟
+                    阅读时长: 3 分钟
                 </time>
             </div>
         
@@ -383,53 +401,282 @@
     <section class="article-content">
     
     
-    <h2 id="-欢迎来到我的博客">🎉 欢迎来到我的博客
-</h2><p>你好！欢迎来到我使用 Hugo 搭建的个人博客。这是我的第一篇文章，标志着我的博客之旅正式开始。</p>
-<h2 id="为什么选择-hugo">为什么选择 Hugo？
-</h2><p>Hugo 是一个用 Go 语言编写的静态网站生成器，它有以下优点：</p>
-<ul>
-<li>⚡ <strong>速度极快</strong>：构建速度非常快，即使是大型网站也能在几秒内完成构建</li>
-<li>🎨 <strong>主题丰富</strong>：拥有大量精美的主题可供选择</li>
-<li>📝 <strong>Markdown 支持</strong>：使用 Markdown 编写文章，简单高效</li>
-<li>🚀 <strong>易于部署</strong>：可以轻松部署到 GitHub Pages、Netlify 等平台</li>
-<li>🔧 <strong>配置灵活</strong>：强大的配置系统，支持多语言、分类、标签等功能</li>
-</ul>
-<h2 id="我的博客计划">我的博客计划
-</h2><p>在这个博客中，我计划分享：</p>
-<h3 id="技术相关">技术相关
-</h3><ul>
-<li>CG 技术探索与实践</li>
-<li>编程学习笔记</li>
-<li>工具使用技巧</li>
-</ul>
-<h3 id="生活随笔">生活随笔
-</h3><ul>
-<li>日常思考</li>
-<li>学习心得</li>
-<li>个人成长</li>
-</ul>
-<h3 id="资源分享">资源分享
-</h3><ul>
-<li>优质教程推荐</li>
-<li>实用工具介绍</li>
-<li>学习资源整理</li>
-</ul>
-<h2 id="关于博客搭建">关于博客搭建
-</h2><p>这个博客使用了以下技术栈：</p>
-<ul>
-<li><strong>静态网站生成器</strong>：Hugo v0.147.9</li>
-<li><strong>主题</strong>：hugo-theme-stack</li>
-<li><strong>托管平台</strong>：GitHub Pages</li>
-<li><strong>自定义域名</strong>：www.artofrig.com</li>
-<li><strong>自动部署</strong>：GitHub Actions</li>
-</ul>
-<h2 id="写在最后">写在最后
-</h2><p>感谢你访问我的博客！这里将记录我的成长轨迹，分享我的所学所思。</p>
-<p>如果你对某个话题感兴趣，或者有任何建议，欢迎通过页面底部的评论功能与我交流。</p>
-<p>让我们一起在学习的道路上不断前进！💪</p>
+    <h2 id="工具简介">工具简介
+</h2><p><strong>Maya Logic Compiler</strong> 是一个节点逻辑编译器，能够将场景中手动连接的节点网络&quot;反编译&quot;成可复用的 Python 代码。</p>
+<p><strong>开发动机：</strong> 每次在 Maya 中手动连接好节点实现功能后，转头又需要手写代码重现同样的逻辑。这个工具就是为了解决这个重复劳动问题而诞生的。</p>
 <hr>
-<p><em>本文发布于 2025 年 12 月 15 日</em></p>
-
+<h2 id="快速上手">快速上手
+</h2><h3 id="版本信息">版本信息
+</h3><ul>
+<li><strong>版本：</strong> 2.0.0</li>
+<li><strong>兼容性：</strong> Maya 2022+</li>
+<li><strong>开发环境：</strong> Python 3.x</li>
+</ul>
+<h3 id="安装使用">安装使用
+</h3><p>在 Maya Script Editor 中运行：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">sys</span>
+</span></span><span class="line"><span class="cl"><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">r</span><span class="s2">&#34;D:\Pycharmpro\Maya2026_pro&#34;</span><span class="p">)</span>  <span class="c1"># 修改为你的路径</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">LogicCompiler</span> <span class="kn">import</span> <span class="n">ui</span>
+</span></span><span class="line"><span class="cl"><span class="n">ui</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="基本操作流程">基本操作流程
+</h3><p><img src="/p/maya-logic-compiler/ToolUI.png"
+	width="639"
+	height="1132"
+	srcset="/p/maya-logic-compiler/ToolUI_hu_71aefec6360d2122.png 480w, /p/maya-logic-compiler/ToolUI_hu_cdcb7ab56ff4bcd2.png 1024w"
+	loading="lazy"
+	
+		alt="工具界面"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="56"
+		data-flex-basis="135px"
+	
+></p>
+<p><strong>使用步骤：</strong></p>
+<ol>
+<li><strong>添加驱动端（Source）</strong> → 选择场景中的驱动节点 → 点击&quot;添加 Source&quot;</li>
+<li><strong>添加被驱动端（Target）</strong> → 选择被驱动节点 → 点击&quot;添加 Target&quot;</li>
+<li><strong>添加中间节点（Intermediate）</strong> → 选择中间的所有逻辑节点 → 点击&quot;添加中间节点&quot;</li>
+<li><strong>生成代码</strong> → 点击&quot;生成代码&quot;按钮</li>
+<li><strong>复制/测试</strong> → 生成的代码会显示在下方文本框中，可以直接复制或在工具中测试</li>
+</ol>
+<hr>
+<h2 id="使用示例">使用示例
+</h2><h3 id="示例场景">示例场景
+</h3><p>假设您在场景中创建了这样的节点连接：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">pCube1 (Source)
+</span></span><span class="line"><span class="cl">  └─ translateX ────────┐
+</span></span><span class="line"><span class="cl">                         ↓
+</span></span><span class="line"><span class="cl">              multiplyDivide1 (中间节点)
+</span></span><span class="line"><span class="cl">                    ↓ outputX
+</span></span><span class="line"><span class="cl">pSphere1 (Target) ←─────┘
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>说明：</strong> <code>pCube1</code> 的 X 轴位移通过 <code>multiplyDivide1</code> 节点进行除法运算后，驱动 <code>pSphere1</code> 的位移。</p>
+<h3 id="操作步骤">操作步骤
+</h3><ol>
+<li>选中 <code>pCube1</code> → 点击&quot;添加 Source&quot;</li>
+<li>选中 <code>pSphere1</code> → 点击&quot;添加 Target&quot;</li>
+<li>选中 <code>multiplyDivide1</code> → 点击&quot;添加中间节点&quot;</li>
+<li>点击&quot;生成代码&quot;</li>
+</ol>
+<h3 id="生成的代码">生成的代码
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">maya.cmds</span> <span class="k">as</span> <span class="nn">cmds</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">build_connection_logic</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">    重建节点逻辑
+</span></span></span><span class="line"><span class="cl"><span class="s2">    
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Args:
+</span></span></span><span class="line"><span class="cl"><span class="s2">        source (str): 驱动端节点
+</span></span></span><span class="line"><span class="cl"><span class="s2">        target (str): 被驱动端节点
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cmds</span><span class="o">.</span><span class="n">undoInfo</span><span class="p">(</span><span class="n">openChunk</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># 1. Create Intermediate Nodes</span>
+</span></span><span class="line"><span class="cl">        <span class="n">multiplyDivide1_var</span> <span class="o">=</span> <span class="n">cmds</span><span class="o">.</span><span class="n">createNode</span><span class="p">(</span><span class="s1">&#39;multiplyDivide&#39;</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                                              <span class="n">name</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">source</span><span class="si">}</span><span class="s1">_multiplyDivide1_gen&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="c1"># 2. Set Attributes (Skip Default Values)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cmds</span><span class="o">.</span><span class="n">setAttr</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">multiplyDivide1_var</span><span class="si">}</span><span class="s2">.operation&#34;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># Division</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cmds</span><span class="o">.</span><span class="n">setAttr</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">multiplyDivide1_var</span><span class="si">}</span><span class="s2">.input2X&#34;</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="c1"># 3. Connect Attributes</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cmds</span><span class="o">.</span><span class="n">connectAttr</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">source</span><span class="si">}</span><span class="s2">.translateX&#34;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">multiplyDivide1_var</span><span class="si">}</span><span class="s2">.input1X&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cmds</span><span class="o">.</span><span class="n">connectAttr</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">multiplyDivide1_var</span><span class="si">}</span><span class="s2">.outputX&#34;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">target</span><span class="si">}</span><span class="s2">.translateX&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Success: Logic connected from </span><span class="si">{</span><span class="n">source</span><span class="si">}</span><span class="s1"> to </span><span class="si">{</span><span class="n">target</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">finally</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cmds</span><span class="o">.</span><span class="n">undoInfo</span><span class="p">(</span><span class="n">closeChunk</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="使用生成的代码">使用生成的代码
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 应用到新的节点对</span>
+</span></span><span class="line"><span class="cl"><span class="n">build_connection_logic</span><span class="p">(</span><span class="s1">&#39;pCube2&#39;</span><span class="p">,</span> <span class="s1">&#39;pCylinder1&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 批量应用</span>
+</span></span><span class="line"><span class="cl"><span class="n">nodes_pairs</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="s1">&#39;pCube1&#39;</span><span class="p">,</span> <span class="s1">&#39;pSphere1&#39;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="s1">&#39;pCube2&#39;</span><span class="p">,</span> <span class="s1">&#39;pSphere2&#39;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="s1">&#39;pCube3&#39;</span><span class="p">,</span> <span class="s1">&#39;pSphere3&#39;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">source</span><span class="p">,</span> <span class="n">target</span> <span class="ow">in</span> <span class="n">nodes_pairs</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">build_connection_logic</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="工具功能">工具功能
+</h2><h3 id="支持的数据类型">支持的数据类型
+</h3><p>工具能够正确识别和处理以下 Maya 属性类型：</p>
+<ul>
+<li><strong>数值类型：</strong> <code>float</code>, <code>double</code>, <code>int</code>, <code>bool</code></li>
+<li><strong>向量类型：</strong> <code>double3</code>, <code>float3</code>（如 translate, rotate, scale）</li>
+<li><strong>字符串类型：</strong> <code>string</code></li>
+<li><strong>枚举类型：</strong> <code>enum</code>（如 multiplyDivide 的 operation）</li>
+<li><strong>矩阵类型：</strong> <code>matrix</code>（如 multMatrix 节点）</li>
+<li><strong>消息类型：</strong> <code>message</code>（使用 <code>force=True</code> 特殊处理）</li>
+</ul>
+<h3 id="多对多连接支持">多对多连接支持
+</h3><p>工具支持灵活的节点连接模式：</p>
+<p><strong>一对多（One-to-Many）：</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">一个 Source → 多个 Target
+</span></span><span class="line"><span class="cl">示例：一个控制器驱动多个物体
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>多对一（Many-to-One）：</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">多个 Source → 一个 Target
+</span></span><span class="line"><span class="cl">示例：多个输入混合后驱动一个目标
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>多对多（Many-to-Many）：</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">多个 Source → 多个 Target
+</span></span><span class="line"><span class="cl">示例：复杂的多对象联动系统
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="智能属性过滤">智能属性过滤
+</h3><p><strong>自动跳过以下属性：</strong></p>
+<ul>
+<li>✅ 默认值属性（无需手动设置）</li>
+<li>✅ 已连接属性（避免代码冲突）</li>
+<li>✅ 只读属性（系统属性）</li>
+</ul>
+<p><strong>只导出必要的属性：</strong></p>
+<ul>
+<li>✅ 用户修改过的值</li>
+<li>✅ 未被连接的可设置属性</li>
+<li>✅ 完整的数组和复合属性</li>
+</ul>
+<h3 id="节点网络验证">节点网络验证
+</h3><p><strong>自动检测漏选节点：</strong></p>
+<p>如果节点网络是这样：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">A → B → C → D
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>但你只选择了 <code>B</code> 作为中间节点，工具会提示：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Warning: 检测到漏选的节点: [&#39;C&#39;]
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这样可以确保生成的代码包含完整的节点逻辑。</p>
+<h3 id="名称智能清洗">名称智能清洗
+</h3><p>自动处理特殊命名情况：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 去除命名空间</span>
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;character:Spine_FK_ctrl&#34;</span> <span class="err">→</span> <span class="s2">&#34;Spine_FK_ctrl_var&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 去除层级路径</span>
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;|group1|pCube1&#34;</span> <span class="err">→</span> <span class="s2">&#34;pCube1_var&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 清理特殊字符</span>
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;node.with@special#chars&#34;</span> <span class="err">→</span> <span class="s2">&#34;node_with_special_chars_var&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
 </section>
 
 
@@ -437,11 +684,11 @@
     
     <section class="article-tags">
         
-            <a href="/tags/hugo/">Hugo</a>
+            <a href="/tags/maya/">Maya</a>
         
-            <a href="/tags/%E5%8D%9A%E5%AE%A2/">博客</a>
+            <a href="/tags/python/">Python</a>
         
-            <a href="/tags/%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99/">静态网站</a>
+            <a href="/tags/%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91/">工具开发</a>
         
     </section>
 
