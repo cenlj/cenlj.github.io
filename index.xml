@@ -14,7 +14,7 @@
         <guid>https://pixelseed.github.io/p/maya-logic-compiler/</guid>
         <description>&lt;h2 id=&#34;工具简介&#34;&gt;工具简介
 &lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Maya Logic Compiler&lt;/strong&gt; 是一个节点逻辑编译器，能够将场景中手动连接的节点网络&amp;quot;反编译&amp;quot;成可复用的 Python 代码。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;开发动机：&lt;/strong&gt; 每次在 Maya 中手动连接好节点实现功能后，转头又需要手写代码重现同样的逻辑。这个工具就是为了解决这个重复劳动问题而诞生的。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;开发动机：&lt;/strong&gt; 每次在 Maya 中手动连接好节点实现功能后，转头又需要手写代码重现同样的逻辑。这个工具就是为了解决这个重复劳动问题而诞生的。目前工具还不支持 约束节点 和 驱动节点 等。&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;快速上手&#34;&gt;快速上手
 &lt;/h2&gt;&lt;h3 id=&#34;版本信息&#34;&gt;版本信息
@@ -358,12 +358,12 @@
   
   &lt;div class=&#34;showcase-box column-2&#34;&gt;
       &lt;div class=&#34;showcase-image&#34;&gt;
-          &lt;a href=&#34;https://pan.baidu.com/s/17GztYxSKAdr_Ie5aTTaS1g?pwd=wffv&#34;&gt;
+          &lt;a href=&#34;https://www.artofrig.com/p/maya-logic-compiler/&#34;&gt;
               &lt;img src=&#34;https://pixelseed.github.io/images/Maya_Logic_Compiler.webp&#34; alt=&#34;Maya Logic Compiler&#34; loading=&#34;lazy&#34;&gt;
           &lt;/a&gt;
       &lt;/div&gt;
       &lt;div class=&#34;showcase-title&#34;&gt;
-          &lt;a href=&#34;https://pan.baidu.com/s/17GztYxSKAdr_Ie5aTTaS1g?pwd=wffv&#34;&gt;Maya Logic Compiler&lt;/a&gt;
+          &lt;a href=&#34;https://www.artofrig.com/p/maya-logic-compiler/&#34;&gt;Maya Logic Compiler&lt;/a&gt;
       &lt;/div&gt;
       &lt;div class=&#34;showcase-summary&#34;&gt;
           节点逻辑编译器，能够将场景中手动连接的节点网络。
