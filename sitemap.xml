@@ -2,26 +2,35 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://pixelseed.github.io/p/matrix-learning-notes/</loc>
-    <lastmod>2025-12-22T15:22:36+08:00</lastmod>
+    <loc>https://pixelseed.github.io/p/3d-%E7%BB%91%E5%AE%9A%E4%B8%8E%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80%E7%9F%A9%E9%98%B5matrix%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2025-12-23T00:16:31+08:00</lastmod>
   </url><url>
     <loc>https://pixelseed.github.io/categories/</loc>
-    <lastmod>2025-12-22T15:22:36+08:00</lastmod>
+    <lastmod>2025-12-23T00:16:31+08:00</lastmod>
+  </url><url>
+    <loc>https://pixelseed.github.io/categories/development/</loc>
+    <lastmod>2025-12-23T00:16:31+08:00</lastmod>
+  </url><url>
+    <loc>https://pixelseed.github.io/tags/math/</loc>
+    <lastmod>2025-12-23T00:16:31+08:00</lastmod>
   </url><url>
     <loc>https://pixelseed.github.io/tags/matrix/</loc>
-    <lastmod>2025-12-22T15:22:36+08:00</lastmod>
+    <lastmod>2025-12-23T00:16:31+08:00</lastmod>
   </url><url>
     <loc>https://pixelseed.github.io/tags/maya/</loc>
-    <lastmod>2025-12-22T15:22:36+08:00</lastmod>
+    <lastmod>2025-12-23T00:16:31+08:00</lastmod>
   </url><url>
     <loc>https://pixelseed.github.io/post/</loc>
-    <lastmod>2025-12-22T15:22:36+08:00</lastmod>
+    <lastmod>2025-12-23T00:16:31+08:00</lastmod>
+  </url><url>
+    <loc>https://pixelseed.github.io/categories/rigging/</loc>
+    <lastmod>2025-12-23T00:16:31+08:00</lastmod>
+  </url><url>
+    <loc>https://pixelseed.github.io/tags/rigging/</loc>
+    <lastmod>2025-12-23T00:16:31+08:00</lastmod>
   </url><url>
     <loc>https://pixelseed.github.io/tags/</loc>
-    <lastmod>2025-12-22T15:22:36+08:00</lastmod>
-  </url><url>
-    <loc>https://pixelseed.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2025-12-22T15:22:36+08:00</lastmod>
+    <lastmod>2025-12-23T00:16:31+08:00</lastmod>
   </url><url>
     <loc>https://pixelseed.github.io/categories/cg%E6%8A%80%E6%9C%AF/</loc>
     <lastmod>2025-12-19T15:58:30+08:00</lastmod>

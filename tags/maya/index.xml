@@ -7,19 +7,346 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>像素西瓜籽的个人博客 All rights reserved. 禁止转载，如需引用，请注明文章链接。</copyright>
-        <lastBuildDate>Mon, 22 Dec 2025 15:22:36 +0800</lastBuildDate><atom:link href="https://pixelseed.github.io/tags/maya/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 23 Dec 2025 00:16:31 +0800</lastBuildDate><atom:link href="https://pixelseed.github.io/tags/maya/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>3D 绑定与开发基础：矩阵（Matrix）学习笔记</title>
-        <link>https://pixelseed.github.io/p/matrix-learning-notes/</link>
-        <pubDate>Mon, 22 Dec 2025 01:00:00 +0800</pubDate>
+        <link>https://pixelseed.github.io/p/3d-%E7%BB%91%E5%AE%9A%E4%B8%8E%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80%E7%9F%A9%E9%98%B5matrix%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+        <pubDate>Mon, 22 Dec 2025 23:32:00 +0800</pubDate>
         
-        <guid>https://pixelseed.github.io/p/matrix-learning-notes/</guid>
-        <description>&lt;h2 id=&#34;一矩阵的数学本质与核心概念&#34;&gt;一、矩阵的数学本质与核心概念
+        <guid>https://pixelseed.github.io/p/3d-%E7%BB%91%E5%AE%9A%E4%B8%8E%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80%E7%9F%A9%E9%98%B5matrix%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+        <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;：本文旨在为Maya绑定师和开发者提供一份从数学原理到实战应用的矩阵指南。我将深入探讨矩阵的几何本质、Maya中的具体实现以及在绑定中的核心应用。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;一矩阵的数学本质与核心概念&#34;&gt;一、矩阵的数学本质与核心概念
 &lt;/h2&gt;&lt;h3 id=&#34;11-矩阵是什么从代数到几何的认知飞跃&#34;&gt;1.1 矩阵是什么？——从代数到几何的认知飞跃
-&lt;/h3&gt;&lt;h3 id=&#34;12-齐次坐标与44矩阵为什么是44&#34;&gt;1.2 齐次坐标与4×4矩阵——为什么是4×4？
-&lt;/h3&gt;&lt;h3 id=&#34;13-基本变换矩阵的构成&#34;&gt;1.3 基本变换矩阵的构成
-&lt;/h3&gt;&lt;h3 id=&#34;14-矩阵运算的几何意义&#34;&gt;1.4 矩阵运算的几何意义
-&lt;/h3&gt;&lt;h2 id=&#34;二maya中矩阵的具体实现与核心属性&#34;&gt;二、Maya中矩阵的具体实现与核心属性
-&lt;/h2&gt;</description>
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;代数定义&lt;/strong&gt;：一个 $m \times n$ 的矩阵是由 $m$ 行 $n$ 列数字排列成的矩形阵列。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;几何本质（核心理解）&lt;/strong&gt;：&lt;strong&gt;矩阵是空间变换的数学描述&lt;/strong&gt;。一个 $m \times n$ 的矩阵定义了一个从 n维空间到 m维空间的线性映射。它描述了空间是如何被拉伸、旋转、剪切、投影的。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;核心性质&lt;/strong&gt;：线性变换保持向量加法和标量乘法，即 $T(u+v) = T(u) + T(v)$ 和 $T(cu) = cT(u)$。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;关键洞见&lt;/strong&gt;：
+&lt;blockquote&gt;
+&lt;p&gt;“&lt;strong&gt;矩阵就是映射！&lt;/strong&gt;”
+在Maya中，每一个移动、旋转、缩放操作，底层都是在修改一个变换矩阵。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;12-齐次坐标与44矩阵为什么是44&#34;&gt;1.2 齐次坐标与4×4矩阵——为什么是4×4？
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;问题&lt;/strong&gt;：3×3矩阵能完美描述旋转、缩放、剪切等线性变换，但无法描述&lt;strong&gt;平移&lt;/strong&gt;（非线性）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;解决方案&lt;/strong&gt;：引入&lt;strong&gt;齐次坐标&lt;/strong&gt;。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;将3D点 $(x, y, z)$ 表示为 $(x, y, z, 1)$。&lt;/li&gt;
+&lt;li&gt;将3D向量表示为 $(x, y, z, 0)$（向量没有位置，平移不影响它）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;4×4 齐次矩阵的结构&lt;/strong&gt;：
+&lt;/p&gt;
+$$
+    \begin{bmatrix}
+    R_{00} &amp; R_{01} &amp; R_{02} &amp; 0 \\
+    R_{10} &amp; R_{11} &amp; R_{12} &amp; 0 \\
+    R_{20} &amp; R_{21} &amp; R_{22} &amp; 0 \\
+    T_x &amp; T_y &amp; T_z &amp; 1
+    \end{bmatrix}
+    $$&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;左上3x3子矩阵&lt;/strong&gt;：控制旋转、缩放、剪切。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;第4行前3列&lt;/strong&gt; ($T_x, T_y, T_z$)：控制平移（注意：这是Maya的行主序存储方式，数学教材中常见平移在第4列）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;优势&lt;/strong&gt;：用一个矩阵统一了所有仿射变换（线性变换+平移）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;13-基本变换矩阵的构成&#34;&gt;1.3 基本变换矩阵的构成
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;平移矩阵 (Translation)&lt;/strong&gt;
+$$
+    \begin{bmatrix}
+    1 &amp; 0 &amp; 0 &amp; 0 \\
+    0 &amp; 1 &amp; 0 &amp; 0 \\
+    0 &amp; 0 &amp; 1 &amp; 0 \\
+    t_x &amp; t_y &amp; t_z &amp; 1
+    \end{bmatrix}
+    $$&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;缩放矩阵 (Scale)&lt;/strong&gt;
+$$
+    \begin{bmatrix}
+    s_x &amp; 0 &amp; 0 &amp; 0 \\
+    0 &amp; s_y &amp; 0 &amp; 0 \\
+    0 &amp; 0 &amp; s_z &amp; 0 \\
+    0 &amp; 0 &amp; 0 &amp; 1
+    \end{bmatrix}
+    $$&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;旋转矩阵 (Rotation)&lt;/strong&gt;：围绕各轴旋转的矩阵较为复杂，本质是正交矩阵。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;刚体变换&lt;/strong&gt;：仅包含平移和旋转（保持长度和角度），矩阵是正交矩阵（逆矩阵等于转置矩阵）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;14-矩阵运算的几何意义&#34;&gt;1.4 矩阵运算的几何意义
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;矩阵乘法&lt;/strong&gt;：代表变换的连续应用（复合变换）。&lt;strong&gt;顺序至关重要&lt;/strong&gt;（不满足交换律）。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Maya约定（行向量）&lt;/strong&gt;：$v&amp;rsquo; = v \times M$。变换顺序是从左到右。
+&lt;ul&gt;
+&lt;li&gt;公式：$Local \times Parent = World$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;标准数学约定（列向量）&lt;/strong&gt;：$v&amp;rsquo; = M \times v$。变换顺序是从右到左。
+&lt;ul&gt;
+&lt;li&gt;公式：$World = Parent \times Local$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;：在Maya文档和节点连接中，遵循&lt;strong&gt;行向量&lt;/strong&gt;逻辑，即“子物体矩阵 乘 父物体矩阵”。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;逆矩阵&lt;/strong&gt; $A^{-1}$：代表“撤销”该变换。若 $Ax = y$，则 $x = A^{-1}y$。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;转置矩阵&lt;/strong&gt; $A^T$：行和列互换。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;正交矩阵&lt;/strong&gt;：其逆矩阵等于其转置矩阵 ($A^{-1} = A^T$)。它代表的变换是刚体运动。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;行列式&lt;/strong&gt; ($det$)：代表该线性变换导致的有向体积缩放比例。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$|det| = 1$：体积不变（如纯旋转）。&lt;/li&gt;
+&lt;li&gt;$|det| &amp;gt; 1$：体积放大。&lt;/li&gt;
+&lt;li&gt;$|det| = 0$：将空间压缩到更低维度（矩阵不可逆）。&lt;/li&gt;
+&lt;li&gt;$det &amp;lt; 0$：变换改变了空间的“手性”（镜像反射）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;二maya中矩阵的具体实现与核心属性&#34;&gt;二、Maya中矩阵的具体实现与核心属性
+&lt;/h2&gt;&lt;h3 id=&#34;21-maya的坐标系统&#34;&gt;2.1 Maya的坐标系统
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;右手笛卡尔坐标系&lt;/strong&gt;：X轴向右，Y轴向上，Z轴向屏幕外（前）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;关键坐标空间&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;世界空间 (World Space)&lt;/strong&gt;：场景的绝对坐标系。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;对象空间 (Object Space)&lt;/strong&gt;：物体自身的局部坐标系。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;局部空间 (Local Space)&lt;/strong&gt;：相对于父对象的坐标系。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;22-transform节点的六个核心矩阵属性重中之重&#34;&gt;2.2 Transform节点的六个核心矩阵属性（重中之重！）
+&lt;/h3&gt;&lt;p&gt;这是连接数学理论与Maya实践的核心桥梁。每个 &lt;code&gt;transform&lt;/code&gt; 节点都拥有这六个属性，用于在不同坐标系间转换。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;matrix&lt;/code&gt;&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;节点自身的局部变换矩阵。&lt;/li&gt;
+&lt;li&gt;描述该节点相对于其父级坐标系的位置、旋转、缩放和剪切。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;worldMatrix&lt;/code&gt;&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;节点在世界坐标系中的变换矩阵。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;核心计算公式&lt;/strong&gt;：&lt;code&gt;obj.matrix * obj.parentMatrix = obj.worldMatrix&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;更通用的级联公式&lt;/strong&gt;：&lt;code&gt;obj.matrix * obj父物体的matrix * ... * 最上级物体的matrix = worldMatrix&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;parentMatrix&lt;/code&gt;&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;父节点的 &lt;code&gt;worldMatrix&lt;/code&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;inverseMatrix&lt;/code&gt;&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;节点自身局部变换矩阵的逆矩阵。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;核心性质&lt;/strong&gt;：&lt;code&gt;obj.matrix * obj.inverseMatrix = I&lt;/code&gt;（单位矩阵）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;worldInverseMatrix&lt;/code&gt;&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;节点世界变换矩阵的逆矩阵。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;核心应用&lt;/strong&gt;：将世界空间的数据转换到该物体的局部空间。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;parentInverseMatrix&lt;/code&gt;&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;父节点世界变换矩阵的逆矩阵。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;23-必须掌握的七个核心矩阵运算公式&#34;&gt;2.3 必须掌握的七个核心矩阵运算公式
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;公式1&lt;/strong&gt;：&lt;code&gt;obj.matrix * obj父物体的matrix * ... * 最上级物体的matrix = worldMatrix&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;公式2&lt;/strong&gt;：&lt;code&gt;obj.matrix * obj.parentMatrix = worldMatrix&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;公式3&lt;/strong&gt;：&lt;code&gt;obj.matrix * obj.inverseMatrix = 单位矩阵&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;公式4&lt;/strong&gt;：&lt;code&gt;A.worldPosition * B.worldInverseMatrix&lt;/code&gt; = 将A点转换到B物体的局部坐标系&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;公式5&lt;/strong&gt;：&lt;code&gt;A.worldMatrix * B.worldInverseMatrix&lt;/code&gt; = 将A物体的世界变换转换到B物体的局部坐标系&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;公式6&lt;/strong&gt;：&lt;code&gt;A.worldPosition * B.parentInverseMatrix&lt;/code&gt; = 将A点转换到B物体父物体的局部坐标系&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;公式7&lt;/strong&gt;：&lt;code&gt;A.worldMatrix * B.parentInverseMatrix&lt;/code&gt; = 将A物体的世界变换转换到B物体父物体的局部坐标系&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;：公式4和公式5是约束、空间切换等高级应用的基石。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;24-maya中的矩阵运算节点&#34;&gt;2.4 Maya中的矩阵运算节点
+&lt;/h3&gt;&lt;p&gt;在节点编辑器（Node Editor）中，可以通过可视化方式操作矩阵。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;multMatrix&lt;/code&gt;&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;矩阵乘法节点。将多个矩阵按顺序左乘（从下到上输入，结果从上到下应用）。&lt;/li&gt;
+&lt;li&gt;是组合变换、实现约束的核心节点。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;decomposeMatrix&lt;/code&gt;&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;矩阵分解节点。将一个4×4变换矩阵分解为独立的平移(&lt;code&gt;translate&lt;/code&gt;)、旋转(&lt;code&gt;rotate&lt;/code&gt;)、缩放(&lt;code&gt;scale&lt;/code&gt;)、剪切(&lt;code&gt;shear&lt;/code&gt;)分量。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;注意&lt;/strong&gt;：需要加载 &lt;code&gt;decomposeMatrix&lt;/code&gt; 插件才能创建。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;composeMatrix&lt;/code&gt;&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;矩阵合成节点。&lt;code&gt;decomposeMatrix&lt;/code&gt;的逆操作。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;pointMatrixMult&lt;/code&gt;&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;点乘矩阵节点。计算一个点（或向量）经过某个矩阵变换后的新位置。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;vectorProduct&lt;/code&gt;&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;向量运算节点。支持点乘、叉乘，以及“矩阵左乘向量”的操作。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;fourByFourMatrix&lt;/code&gt;&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;4×4矩阵创建节点。可以手动输入16个值来构建一个自定义矩阵。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;辅助节点&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;plusMinusAverage&lt;/code&gt;：计算偏移值。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;condition&lt;/code&gt;：条件判断。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;multiplyDivide&lt;/code&gt;：乘除运算。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;三矩阵在maya绑定与动画中的核心应用&#34;&gt;三、矩阵在Maya绑定与动画中的核心应用
+&lt;/h2&gt;&lt;h3 id=&#34;31-约束系统-constraint-system--矩阵乘法的直观体现&#34;&gt;3.1 约束系统 (Constraint System) —— 矩阵乘法的直观体现
+&lt;/h3&gt;&lt;p&gt;约束的本质是空间转换。&lt;/p&gt;
+&lt;h4 id=&#34;311-点约束-point-constraint&#34;&gt;3.1.1 点约束 (Point Constraint)
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;目标&lt;/strong&gt;：让A物体的位置始终匹配B物体的世界位置。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;原理&lt;/strong&gt;：&lt;code&gt;A.worldMatrix * B.worldInverseMatrix&lt;/code&gt;，然后分解出平移分量。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;关键&lt;/strong&gt;：&lt;code&gt;parentInverseMatrix&lt;/code&gt; 用于将世界空间的位置转换到被约束物体的父空间。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;节点网络示例&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class=&#34;mermaid&#34;&gt;
+graph LR
+    A[&#34;Locator1 (Target)&#34;] -- &#34;worldMatrix(0)&#34; --&gt; MM[&#34;multMatrix&#34;]
+    B[&#34;pCube1 (Constrained)&#34;] -- &#34;parentInverseMatrix(0)&#34; --&gt; MM
+    MM -- &#34;matrixSum&#34; --&gt; DM[&#34;decomposeMatrix&#34;]
+    DM -- &#34;outputTranslate&#34; --&gt; C[&#34;pCube1.translate&#34;]
+&lt;/div&gt;
+&lt;h4 id=&#34;312-方向约束-orient-constraint&#34;&gt;3.1.2 方向约束 (Orient Constraint)
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;目标&lt;/strong&gt;：让A物体的旋转匹配B物体的世界旋转。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;原理&lt;/strong&gt;：与点约束类似，但分解出的是旋转分量。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;节点网络&lt;/strong&gt;：同上，但连接的是 &lt;code&gt;outputRotate&lt;/code&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;313-父子约束-parent-constraint&#34;&gt;3.1.3 父子约束 (Parent Constraint)
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;目标&lt;/strong&gt;：同时控制位置和旋转，模拟父子关系。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;原理&lt;/strong&gt;：组合点约束和方向约束的逻辑。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;32-空间转换-space-switching&#34;&gt;3.2 空间转换 (Space Switching)
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;问题&lt;/strong&gt;：如何让一个控制器在“世界空间”中移动，但驱动骨骼在“某个骨骼的局部空间”中移动？&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;解决方案&lt;/strong&gt;：使用 &lt;code&gt;worldMatrix&lt;/code&gt; 和 &lt;code&gt;worldInverseMatrix&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;示例&lt;/strong&gt;：将控制器在世界空间中的移动，转换为肩胛骨在其父骨骼（胸部）局部空间中的移动。
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;controller.worldMatrix * shoulderJoint.parentInverseMatrix&lt;/code&gt; -&amp;gt; 分解得到局部变换值 -&amp;gt; 驱动肩胛骨关节&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;mermaid&#34;&gt;
+graph LR
+    Ctrl[&#34;Controller&#34;] -- &#34;worldMatrix&#34; --&gt; MM[&#34;multMatrix&#34;]
+    Chest[&#34;Chest Joint (Parent)&#34;] -- &#34;worldInverseMatrix&#34; --&gt; MM
+    MM -- &#34;matrixSum&#34; --&gt; DM[&#34;decomposeMatrix&#34;]
+    DM -- &#34;outputTranslate/Rotate&#34; --&gt; Shoulder[&#34;Shoulder Joint&#34;]
+&lt;/div&gt;
+&lt;h3 id=&#34;33-蒙皮与线性混合蒙皮-linear-blend-skinning-lbs&#34;&gt;3.3 蒙皮与线性混合蒙皮 (Linear Blend Skinning, LBS)
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;核心公式&lt;/strong&gt;：
+$$ \text{顶点最终位置} = \sum (\text{权重}_i \times \text{骨骼}_i\text{的世界变换矩阵} \times \text{骨骼}_i\text{的绑定姿势逆矩阵} \times \text{顶点初始位置}) $$&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;解读&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;顶点初始位置&lt;/strong&gt;：顶点在绑定姿势（T-Pose）下的位置（对象空间）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;骨骼_i的绑定姿势逆矩阵&lt;/strong&gt;：将顶点从对象空间转换到骨骼_i在绑定姿势下的局部空间。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;骨骼_i的世界变换矩阵&lt;/strong&gt;：将顶点从骨骼_i的局部空间转换到当前动画姿势下的世界空间。&lt;/li&gt;
+&lt;li&gt;乘积 &lt;strong&gt;骨骼_i的世界变换矩阵 * 骨骼_i的绑定姿势逆矩阵&lt;/strong&gt; 常被称为“蒙皮矩阵”或“偏移矩阵”，是蒙皮计算的核心。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;34-矩阵在变形器中的应用&#34;&gt;3.4 矩阵在变形器中的应用
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;晶格 (Lattice) 变形&lt;/strong&gt;：&lt;code&gt;ffd1Lattice&lt;/code&gt; 和 &lt;code&gt;ffd1Base&lt;/code&gt; 的矩阵控制着晶格空间到对象空间的映射。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;注意&lt;/strong&gt;：同时选择 &lt;code&gt;ffd1Lattice&lt;/code&gt; 和 &lt;code&gt;ffd1Base&lt;/code&gt; 并调整时，需要调整整个晶格组（group）的变换，才能正确影响物体。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;四高级技巧常见问题与性能优化&#34;&gt;四、高级技巧、常见问题与性能优化
+&lt;/h2&gt;&lt;h3 id=&#34;41-矩阵分解的顺序与maya的约定&#34;&gt;4.1 矩阵分解的顺序与Maya的约定
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;一个变换矩阵 $M$ 可以分解为：$M = S \times Sh \times R \times T$ （缩放 * 剪切 * 旋转 * 平移）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;注意&lt;/strong&gt;：这个顺序（Scale, Shear, Rotate, Translate）是Maya内部使用的。有些资料或软件可能使用 $T \times R \times Sh \times S$ 或其他顺序。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;decomposeMatrix&lt;/code&gt; 节点&lt;/strong&gt;：严格遵循此顺序输出 &lt;code&gt;scale&lt;/code&gt;, &lt;code&gt;shear&lt;/code&gt;, &lt;code&gt;rotate&lt;/code&gt;, &lt;code&gt;translate&lt;/code&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;42-法线变换的特殊处理&#34;&gt;4.2 法线变换的特殊处理
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;错误做法&lt;/strong&gt;：直接使用变换物体的矩阵去变换法线。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;正确做法&lt;/strong&gt;：变换法线需要使用原变换矩阵的&lt;strong&gt;伴随矩阵的转置&lt;/strong&gt;（对于只含旋转和均匀缩放的矩阵，其逆矩阵的转置等于原矩阵）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;简化情况&lt;/strong&gt;：如果变换仅包含旋转和均匀缩放（即 &lt;code&gt;scaleX = scaleY = scaleZ&lt;/code&gt;），则可以直接使用原矩阵来变换法线。若包含非均匀缩放或剪切，则必须使用正确公式。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;43-万向节死锁-gimbal-lock-与旋转插值&#34;&gt;4.3 万向节死锁 (Gimbal Lock) 与旋转插值
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;问题根源&lt;/strong&gt;：使用欧拉角（三个独立的旋转角度）表示旋转时，当某个轴旋转90度后，会丢失一个自由度。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;矩阵的局限&lt;/strong&gt;：对旋转矩阵进行直接线性插值，结果不一定仍是有效的旋转矩阵。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;解决方案&lt;/strong&gt;：使用四元数 (Quaternion) 进行旋转表示和插值。Maya的 &lt;code&gt;decomposeMatrix&lt;/code&gt; 节点可以输出四元数 (&lt;code&gt;outputQuat&lt;/code&gt;)，&lt;code&gt;composeMatrix&lt;/code&gt; 节点也可以接受四元数输入。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;44-性能优化技巧&#34;&gt;4.4 性能优化技巧
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;避免重复计算&lt;/strong&gt;：特别是逆矩阵 (&lt;code&gt;inverseMatrix&lt;/code&gt;, &lt;code&gt;worldInverseMatrix&lt;/code&gt;) 的计算开销较大。在表达式或脚本中，尽量缓存计算结果，而不是每帧都重新获取。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;利用节点网络&lt;/strong&gt;：将复杂的矩阵运算构建在节点网络中，比使用每帧执行的表达式（expression）更高效。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;简化层级&lt;/strong&gt;：过深的节点层级会增加矩阵连乘的计算量。在保证功能的前提下，尽量保持层级扁平。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;谨慎使用 &lt;code&gt;getAttr&lt;/code&gt;&lt;/strong&gt;：在MEL/Python脚本中频繁查询矩阵属性（尤其是 &lt;code&gt;worldMatrix&lt;/code&gt;）会影响性能。考虑使用 &lt;code&gt;xform&lt;/code&gt; 命令结合 &lt;code&gt;-q&lt;/code&gt; 和 &lt;code&gt;-ws&lt;/code&gt; 标志来获取世界空间变换数据。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;45-调试与验证技巧&#34;&gt;4.5 调试与验证技巧
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;打印矩阵值&lt;/strong&gt;：使用 &lt;code&gt;print(cmds.getAttr(&#39;node.worldMatrix[0]&#39;))&lt;/code&gt; 查看矩阵的16个值。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;创建调试Locator&lt;/strong&gt;：用矩阵驱动一个Locator的位置和旋转，可视化地检查矩阵变换是否正确。
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Python示例：将A物体的世界矩阵应用到B locator上&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;maya.cmds&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;as&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;cmds&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;matrix_list&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cmds&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;getAttr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;A.worldMatrix[0]&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;cmds&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;xform&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;B_locator&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;matrix&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;matrix_list&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;worldSpace&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;True&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;使用 &lt;code&gt;decomposeMatrix&lt;/code&gt; 节点检查&lt;/strong&gt;：将复杂的矩阵连接到 &lt;code&gt;decomposeMatrix&lt;/code&gt;，查看分解出的平移、旋转、缩放值是否符合预期。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;对比内置约束&lt;/strong&gt;：用节点网络搭建一个自定义约束后，与Maya内置的 &lt;code&gt;pointConstraint&lt;/code&gt; 结果进行对比，验证正确性。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;script type=&#34;module&#34;&gt;
+  import mermaid from &#39;https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs&#39;;
+  mermaid.initialize({ startOnLoad: true });
+&lt;/script&gt;
+</description>
         </item>
         <item>
         <title>Maya Logic Compiler - 节点逻辑编译器</title>

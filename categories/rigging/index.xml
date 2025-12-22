@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Matrix on 像素西瓜籽的个人博客</title>
-        <link>https://pixelseed.github.io/tags/matrix/</link>
-        <description>Recent content in Matrix on 像素西瓜籽的个人博客</description>
+        <title>Rigging on 像素西瓜籽的个人博客</title>
+        <link>https://pixelseed.github.io/categories/rigging/</link>
+        <description>Recent content in Rigging on 像素西瓜籽的个人博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>像素西瓜籽的个人博客 All rights reserved. 禁止转载，如需引用，请注明文章链接。</copyright>
-        <lastBuildDate>Tue, 23 Dec 2025 00:16:31 +0800</lastBuildDate><atom:link href="https://pixelseed.github.io/tags/matrix/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 23 Dec 2025 00:16:31 +0800</lastBuildDate><atom:link href="https://pixelseed.github.io/categories/rigging/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>3D 绑定与开发基础：矩阵（Matrix）学习笔记</title>
         <link>https://pixelseed.github.io/p/3d-%E7%BB%91%E5%AE%9A%E4%B8%8E%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80%E7%9F%A9%E9%98%B5matrix%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
         <pubDate>Mon, 22 Dec 2025 23:32:00 +0800</pubDate>
